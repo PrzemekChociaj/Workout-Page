@@ -1,14 +1,11 @@
-const ButtonClassName = (isRunning: boolean): string => {
-	return isRunning
-		? 'bg-red-500 hover:bg-red-700'
-		: 'bg-blue-500 hover:bg-blue-700';
-};
+const getButtonColor = (isRunning: boolean): string =>
+	isRunning ? 'bg-red-500 hover:bg-red-700' : 'bg-blue-500 hover:bg-blue-700';
 
 const TimerButton: React.FunctionComponent<{
 	isRunning: boolean;
 	toggleTimer: () => void;
 }> = ({ isRunning, toggleTimer }) => {
-	const buttonClassName: string = ButtonClassName(isRunning);
+	const buttonClassName: string = getButtonColor(isRunning);
 
 	return (
 		<button
