@@ -4,6 +4,7 @@ interface TimerHook {
 	count: number;
 	isRunning: boolean;
 	toggleTimer: () => void;
+	resetTimer: () => void;
 }
 
 const useTimer = (): TimerHook => {
@@ -38,7 +39,12 @@ const useTimer = (): TimerHook => {
 		}
 	};
 
-	return { count, isRunning, toggleTimer };
+	const resetTimer = () => {
+		stopTimer();
+		setCount(0);
+	};
+
+	return { count, isRunning, toggleTimer, resetTimer };
 };
 
 export default useTimer;
