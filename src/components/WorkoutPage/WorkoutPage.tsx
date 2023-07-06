@@ -12,6 +12,7 @@ const WorkoutPage: React.FunctionComponent = () => {
       </div>
     </div>
   );
+
 };
 
 export default WorkoutPage;
