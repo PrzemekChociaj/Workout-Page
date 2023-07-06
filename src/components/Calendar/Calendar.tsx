@@ -19,7 +19,7 @@ const Calendar: React.FunctionComponent = () => {
 	};
 
 	return (
-		<div className='w-1/5 h-1/4 bg-gray-200 p-4 absolute right-0 top-0  '>
+		<div className='w-1/5 h-full bg-gray-200 p-4 absolute right-0 top-0  '>
 			<h1 className='text-lg font-bold mb-4'>Kalendarz</h1>
 			<DatePicker
 				selected={selectedDate}
