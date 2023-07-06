@@ -19,7 +19,7 @@ const Calendar: React.FunctionComponent = () => {
 	};
 
 	return (
-		<div className='w-1/5 h-1/5 bg-gray-200 p-4 absolute right-0 top-0 mt-24 mr-6'>
+		<div className='w-1/5 h-1/4 bg-gray-200 p-4 absolute right-0 top-0  '>
 			<h1 className='text-lg font-bold mb-4'>Kalendarz</h1>
 			<DatePicker
 				selected={selectedDate}
@@ -28,7 +28,7 @@ const Calendar: React.FunctionComponent = () => {
 			/>
 			<button
 				onClick={handleSaveDate}
-				className='mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded'>
+				className='mt-6  ml-10 px-2 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded'>
 				Zapisz datę
 			</button>
 		</div>
