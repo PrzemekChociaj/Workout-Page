@@ -12,11 +12,10 @@ const WorkoutPage: React.FunctionComponent = () => {
 			<div className='flex flex-col items-center w-[50%] h-[70%] bg-white rounded shadow-lg'>
 				<div className='w-full h-[80%] p-4'>
 					{videoUrl && (
-						<div
-							style={{ height: '100%', width: '100%', position: 'relative' }}>
+						<div className='h-full w-full relative'>
 							<IframeResizer
 								src={videoUrl}
-								style={{ width: '100%', height: '100%', border: 'none' }}
+								className='w-full h-full border-none'
 							/>
 						</div>
 					)}
