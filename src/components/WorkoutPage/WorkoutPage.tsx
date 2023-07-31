@@ -1,20 +1,32 @@
+
 import IframeResizer from 'iframe-resizer-react';
 import Calendar from '../Calendar/Calendar';
-import { back } from '../../Data/WorkoutVideos';
 import Timer from '../Timer/Timer';
+import useLocationState from '../../Hooks/UseLocation';
 
 const WorkoutPage: React.FunctionComponent = () => {
-  return (
-    <div className='flex absolute justify-center items-center rounded-md h-[80%] w-[60%] bottom-0 left-96 ml-32 mb-12 bg-gray-100'>
-		<Timer />
-      <Calendar />
+	const { title, videoUrl } = useLocationState();
 
-      <div className='w-[60%] mr-56  h-[60%] p-4 bg-white rounded shadow-lg'>
-        <IframeResizer src={back} style={{ width: '100%', height: '100%' }} />
-      </div>
-    </div>
-  );
-
+	return (
+		<div className='flex items-center justify-center h-screen bg-gray-100'>
+			<div className='flex flex-col items-center w-[50%] h-[70%] bg-white rounded shadow-lg'>
+				<div className='w-full h-[80%] p-4'>
+					{videoUrl && (
+						<div className='h-full w-full relative'>
+							<IframeResizer
+								src={videoUrl}
+								className='w-full h-full border-none'
+							/>
+						</div>
+					)}
+				</div>
+				<div className='w-full h-[20%] p-4 ml-32 flex justify-center items-center'>
+					<Timer />
+					<Calendar />
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default WorkoutPage;

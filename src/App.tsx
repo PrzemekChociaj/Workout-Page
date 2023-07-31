@@ -1,11 +1,17 @@
-import Wrapper from './Wrapper';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Menu from './components/Menu/Menu';
+import WorkoutPage from './components/WorkoutPage/WorkoutPage';
 
-function App() {
+const App: React.FunctionComponent = () => {
 	return (
-		<>
-			<Wrapper />
-		</>
+		<Router>
+			<Routes>
+				<Route path='/' element={<Menu />} />
+			
+				<Route path='/workout/:exercise' element={<WorkoutPage />} />
+			</Routes>
+		</Router>
 	);
-}
+};
 
 export default App;
