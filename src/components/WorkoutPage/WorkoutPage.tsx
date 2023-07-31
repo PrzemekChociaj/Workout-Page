@@ -1,11 +1,11 @@
-import { useLocation } from 'react-router-dom';
+
 import IframeResizer from 'iframe-resizer-react';
 import Calendar from '../Calendar/Calendar';
 import Timer from '../Timer/Timer';
+import useLocationState from '../../Hooks/UseLocation';
 
 const WorkoutPage: React.FunctionComponent = () => {
-	const location = useLocation();
-	const { title, videoUrl } = location.state;
+	const { title, videoUrl } = useLocationState();
 
 	return (
 		<div className='flex items-center justify-center h-screen bg-gray-100'>
