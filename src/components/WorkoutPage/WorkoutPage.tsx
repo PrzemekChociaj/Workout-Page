@@ -3,6 +3,7 @@ import IframeResizer from 'iframe-resizer-react';
 import Calendar from '../Calendar/Calendar';
 import Timer from '../Timer/Timer';
 import useLocationState from '../../Hooks/UseLocation';
+import RepCounter from '../repCounter/repCounter';
 
 const WorkoutPage: React.FunctionComponent = () => {
 	const { title, videoUrl } = useLocationState();
@@ -23,6 +24,7 @@ const WorkoutPage: React.FunctionComponent = () => {
 				<div className='w-full h-[20%] p-4 ml-32 flex justify-center items-center'>
 					<Timer />
 					<Calendar />
+					<RepCounter />
 				</div>
 			</div>
 		</div>
